@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STG - Replica</title>
+
+
+  <link rel="icon" href="https://www.stgdream.com/front/images/favicon-icon.png" /> 
+
+  <!--BS lib link(4.6.2)-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+
+
+  <!--  Font awesome link(4.5)-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+  <!--Google font link-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+
+  <!--Custom CSS-->
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js"></script>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="container-fluid p-2 nav-cont" id="nav" style="position: initial;">
+    
+    <div class="row">
+      
+    <!--  <div class="col-md-4 nav-socia d-flex justify-content-center align-items-center">
+        <a href="#"><i class="fa fa-facebook btn btn-outline-primary mx-1"></i></a>
+        <a href="#"><i class="fa fa-twitter   btn btn-outline-primary mx-1"></i></a>
+        <a href="#"><i class="fa fa-instagram btn btn-outline-primary mx-1"></i></a>
+        <a href="#"><i class="fa fa-pinterest btn btn-outline-primary mx-1"></i></a>
+        <a href="#"><i class="fa fa-linkedin  btn btn-outline-primary mx-1"></i></a>
+        <a href="#"><i class="fa fa-youtube   btn btn-outline-primary mx-1"></i></a>
+      </div>
+      <div class="col-md-4 d-flex justify-content-center">
+        <img class="img-fluid" width="70"
+          src="https://www.stgdream.com/front/images/common/stg-logo.png">
+      </div>
+      <div class="col-md-4 justify-content-center d-flex align-items-center">
+        <div class="dropdown show">
+          <a class="dropdown-toggle btn" id="navbarDropdownMenuLink" data-toggle="dropdown">
+            Our Group Company
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">IZAPO</a>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+    -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row">
+
+      <div class="col d-flex justify-content-center">
+        <nav class=" navbar navbar-expand-lg">
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+          <ul class="navbar-nav">
+            <div class="col-md-4 nav-socia d-flex justify-content-center align-items-center">
+              <a href="#"><i class="fa fa-facebook btn btn-outline-primary mx-1"></i></a>
+              <a href="#"><i class="fa fa-twitter   btn btn-outline-primary mx-1"></i></a>
+              <a href="#"><i class="fa fa-instagram btn btn-outline-primary mx-1"></i></a>
+              <a href="#"><i class="fa fa-pinterest btn btn-outline-primary mx-1"></i></a>
+              <a href="#"><i class="fa fa-linkedin  btn btn-outline-primary mx-1"></i></a>
+              <a href="#"><i class="fa fa-youtube   btn btn-outline-primary mx-1"></i></a>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center">
+              <a href="./index.html"> <img class="img-fluid" width="70"
+                src="https://www.stgdream.com/front/images/common/stg-logo.png">
+              </a> </div>
+            <div class="col-md-4 justify-content-center d-flex align-items-center">
+              <div class="dropdown show">
+                <a class="dropdown-toggle btn" id="navbarDropdownMenuLink" data-toggle="dropdown">
+                  Our Group Company
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">IZAPO</a>
+                </div>
+              </div>
+          </ul>
+        </div>
+        </nav>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row">
+
+      <div class="col d-flex justify-content-center">
+        <nav class=" navbar navbar-expand-lg">
+          <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+          <ul class="navbar-nav">
+            <li class="nav-item px-3">
+              <a class="nav-link secfg" href="#">Home</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link secfg" href="#about-section">About Us</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link secfg" href="#prod-section">Our Products</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link secfg" href="#">Shop</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link secfg" href="#">Media Coverage</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link secfg" href="#blog-section" style="transition: all 0.3s ease-in-out;">Blog</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link secfg" href="./contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class=" container-fluid p-5" style="background-color: #FFF1E8;">
+    <div class="row">
+      <div class="col-md-8 offset-md-2 col-sm-12 d-flex justify-content-center tag text-center"><span class="h1" style="color: #C7976E;">STG Apple Cider Vinegar</span></div>
+    </div>
+    <hr  style="width:50px;border-top: 2px solid #C7976E;">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-sm-12">
+        <p class="text-center">Are you looking for Apple cider vinegar (ACV) infused with genuine vinegar content? STG Apple Cider Vinegar can be just the right product for you. It is undiluted, unfiltered, and unpasteurized. This healthy drink is made with the use of real apple juice that is extracted from Himalayan apples. It helps in attaining maximum benefits related to health, beauty, and wellness. Not only this, but it also assists you with an immunity boost.</p>
+      </div>
+    </div>
+  </div>
+  <div class=" container-fluid p-5" style="background-color: #EEEEEE;">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-sm-12">
+        <div class="row">
+            <div class="col-md-6">
+<img width="400" class="img-fluid" src="https://www.stgdream.com/front/images/products/apple-cider-vinegar.png" alt="">
+<div class="div d-flex justify-content-center">
+<button  class="btn btn-outline-dark mx-1" >Order Now &nbsp; <i class="fa fa-long-arrow-right"></i></button>
+<button  class="btn btn-outline-dark mx-1" >Order on Whatsapp &nbsp; <i class="fa fa-whatsapp" aria-hidden="true"></i>
+</button>
+</div>
+</div>
+            <div class="col-md-6">
+                <h3 class="font-weight-bold">Apple Cider Vinegar</h3>
+                <hr>
+                <p  class="h5 py-2"><span class="font-weight-bold">Price:</span> $349.00</p>
+                <p class="text-danger py-2 h5"><span class="font-weight-bold">One Bottle:</span>500 ml</p>
+                <ul style="padding: 0;">
+                    <li >It comes out from the juice of top quality apples from the Himalayas</li>
+                    <li >                    It is 100% raw, natural, unfiltered, and unpasteurized.
+                    </li>
+                    <li>                    It is rich in minerals, vitamins, enzymes, and antioxidants.
+                    </li>
+                    <li>                    Having regularly in the morning with lukewarm water will assist you to reduce weight.
+                    </li>
+                    <li>                    STG apple cider vinegar boosts immunity and makes you active.
+                    </li>
+                    <li>                    It assists in enhancing digestion, treating sore throat, and maintaining healthy lipid levels
+                    </li>
+                    <li>It assists in treating various health issues
+                    </li>
+                </ul>
+                <!-- <button  class="btn btn-outline-dark" >Order Now</button>
+                <button  class="btn btn-outline-dark" >Order on Whatsapp</button> -->
+
+            </div>
+        </div>
+      </div>
+    </div>
+
+  
+
+
+
+  </div>
+  <div class=" container-fluid p-5" >
+    <div class="row">
+      <div class="col-md-8 offset-md-2 col-sm-12 d-flex justify-content-center tag text-center"><span class="h1" style="color: #C7976E;">Product Statistics</span></div>
+    </div>
+    <hr  style="width:50px;border-top: 2px solid #C7976E;">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-sm-12">
+
+        <svg width="800" height="500"></svg>
+        <script>
+          // Sample data for purchase rate per month
+          const data = [
+            { month: "Jan", rate: 10 },
+            { month: "Feb", rate: 15 },
+            { month: "Mar", rate: 22 },
+            { month: "Apr", rate: 30 },
+            { month: "May", rate: 18 },
+            { month: "Jun", rate: 25 },
+            { month: "Jul", rate: 20 },
+            { month: "Aug", rate: 16 },
+            { month: "Sep", rate: 28 },
+            { month: "Oct", rate: 32 },
+            { month: "Nov", rate: 19 },
+            { month: "Dec", rate: 24 },
+          ];
+    
+          // Set the dimensions and margins of the graph
+          const margin = { top: 20, right: 20, bottom: 70, left: 40 };
+          const width = 800 - margin.left - margin.right;
+          const height = 500 - margin.top - margin.bottom;
+    
+          // Append the SVG to the body of the page
+          const svg = d3
+            .select("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    
+          // X axis
+          const x = d3.scaleBand().range([0, width]).padding(0.2);
+          x.domain(
+            data.map(function (d) {
+              return d.month;
+            })
+          );
+          svg
+            .append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x))
+            .selectAll("text")
+            .style("text-anchor", "end")
+            .attr("transform", "rotate(-45)");
+    
+          // Y axis
+          const y = d3.scaleLinear().range([height, 0]);
+          y.domain([
+            0,
+            d3.max(data, function (d) {
+              return d.rate;
+            }),
+          ]);
+          svg.append("g").call(d3.axisLeft(y));
+    
+          // Bars
+          svg
+            .selectAll("mybar")
+            .data(data)
+            .enter()
+            .append("rect")
+            .attr("x", function (d) {
+              return x(d.month);
+            })
+            .attr("y", function (d) {
+              return y(d.rate);
+            })
+            .attr("width", x.bandwidth())
+            .attr("height", function (d) {
+              return height - y(d.rate);
+            })
+            .attr("fill", "#C7976E");
+        </script>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+
+
+    <footer>
+      <div class="row  foot-link pribg text-white p-3">
+        <div class="col-md-8 offset-md-2">
+          <div class="row">
+            <div class="col p-5 d-flex justify-content-center">
+              <img src="https://www.stgdream.com/front/images/common/logo-for-footer.png" class="img-fluid" width="100">
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-md-3">
+              The <b>STG Dream India</b> impressive product portfolio has evolved magnificently over the years.
+              Expanding its
+              presence across India and International market, today it has a strong establishment in high growth sectors
+              such as food and beverage and Tobacco industry and many more to fall in coming years.
+            </div>
+            <div class="col-md-2">
+              QUICK LINKS
+              <hr class="foot-div">
+              <ul type="none" class="foot-ul">
+                <li>About Us</li>
+                <li>Media Coverage</li>
+                <li>Contact Us</li>
+                <li>Privacy Policy</li>
+                <li>Terms & Conditions</li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              OUR PRODUCTS
+              <hr class="foot-div">
+              <ul type="none" class="foot-ul">
+                <li><a href="./product-detail.html" class="text-white"> Apple Cider Vinegar</a></li>
+                <li>
+                  Red Wine Vinegar
+
+                </li>
+                <li>
+                  Green Coffee Garcinia
+
+                </li>
+                <li>
+                  Coconut Water Powder
+
+                </li>
+                <li>
+                  Coconut Water Natural Refreshmenet
+                </li>
+                <li>
+                  Aloe Vera Juice
+
+                </li>
+                <li>
+                  Combo Products
+
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              JOING OUR MAILING LIST
+              <hr class="foot-div">
+              Subscribe to Our Newsletter to get Important News, Amazing Offers & Inside Scoops:
+              <div class="input-group mb-3 py-3">
+                <input type="text" class="form-control" placeholder="Enter your email">
+                <div class="input-group-append">
+                  <input type="button" class="input-group-text btn btn-outline-dark" value="Sign up">
+                </div>
+              </div>
+              Follow us social media links
+
+              <div class="py-3 foot-social">
+                <a href="#"><i class="fa fa-facebook btn btn-outline-light"></i></a>
+
+                <a href="#"><i class="fa fa-twitter btn btn-outline-light"></i></a>
+                <a href="#"><i class="fa fa-instagram btn btn-outline-light"></i></a>
+                <a href="#"><i class="fa fa-pinterest btn btn-outline-light"></i></a>
+                <a href="#"><i class="fa fa-linkedin btn btn-outline-light"></i></a>
+                <a href="#"><i class="fa fa-youtube btn btn-outline-light"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row small foot-right p-2 secbg  ">
+        <div class="col-md-3 offset-md-2 col-sm-12  d-flex justify-content-center">
+          Copyrights 2021 All Right Reserved by &nbsp; <a href="#" class="prifg"> STG Dream India Pvt. Ltd.</a>
+        </div>
+        <div class="col-md-4 offset-md-2 col-sm-12 d-flex justify-content-center">
+          Design & Developed by &nbsp; <a href="#" class="prifg"> Brandwell Media Pvt. Ltd.</a> </div>
+      </div>
+    </footer>
+  </div>
+
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+    integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $('.owl-carousel').each(function () {
+      var options = {
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 3
+          }
+        }
+      };
+
+      if ($(this).hasClass('auto')) {
+        options.autoplay = true;
+        options.autoplayTimeout = 2000;
+        options.autoplayHoverPause = true;
+
+      }
+
+      $(this).owlCarousel(options);
+    });
+
+  </script>
+</body>
+
+</html>
