@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Polling App</title>
+    <!-- Bootstrap CSS and JavaScript files -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+        <!-- Custom CSS -->
+    <style>
+        body {
+            margin: 20px; /* Add margin to the body for spacing */
+        }
+
+        /* Style for the create poll form */
+        #createPollForm {
+            margin-bottom: 20px;
+        }
+
+        /* Style for the poll table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Style for poll rows */
+        tr.poll-row:hover {
+            background-color: #f5f5f5;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Style for vote and view results buttons */
+        .vote-btn, .results-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .vote-btn:hover, .results-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Create Polls</h2>
+
+     <!-- Your HTML form for creating polls goes here -->
+    <form action="/api/polls" method="post" id="createPollForm">
+        <!-- Form fields for creating polls -->
+        <div class="form-group">
+            <label for="question">Question:</label>
+            <input type="text"  id="question" name="question" required>
+        </div>
+        <div class="form-group">
+            <label for="options">Options (comma-separated):</label>
+            <input type="text"  id="options" name="options" required>
+        </div>
+        <button type="submit" class="btn btn-success">Create Poll</button>
+    </form>
+
+
+    <!-- Optional: Add JavaScript to handle form submission asynchronously -->
+    <script>
+        document.getElementById("createPollForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            createPoll(); // Call a function to handle the form submission asynchronously
+        });
+
+        function createPoll() {
+            // Implement the logic to handle the asynchronous form submission, e.g., using AJAX
+            // You can use JavaScript frameworks like Axios or fetch API for this purpose
+            // Example using fetch API:
+            fetch('/api/polls', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    question: document.getElementById('question').value,
+                    options: document.getElementById('options').value.split(',').map(option => option.trim()),
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                // You can update the UI or perform any other actions here
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                // Handle errors or display error messages
+            });
+        }
+    </script>
+    <hr>
+
+    <h2>Available Polls</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Sl. No</th>
+                <th>Poll Description</th>
+                <th>Options</th>
+                <th>Vote</th>
+                <th>View Results</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iterate over the available polls -->
+            <tr th:each="poll, stat : ${polls}" class="poll-row">
+                <td th:text="${stat.index + 1}"></td>
+                <td th:text="${poll.question}"></td>
+                <td>
+                    <!-- Iterate over the options and create radio buttons -->
+                    <span th:each="option : ${poll.options}">
+                        <input type="radio" th:id="${'option_' + poll.id + '_' + option}" th:name="${'poll_' + poll.id}" th:value="${option}">
+                        <label th:for="${'option_' + poll.id + '_' + option}" th:text="${option}"></label>
+                    </span>
+                </td>
+                <td>
+                    <button th:onclick="'vote(' + ${poll.id} + ')'" type="button" class="btn btn-primary vote-btn">Vote</button>
+                </td>
+                <td>
+                    <button th:onclick="'viewResults(' + ${poll.id} + ')'" type="button" class="btn btn-success results-btn">View Results</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function vote(pollId) {
+            // Implement the logic to handle the vote button click
+            // You can use JavaScript frameworks like Axios or fetch API for this purpose
+            // Example using fetch API:
+            var selectedOption = document.querySelector('input[name="poll_' + pollId + '"]:checked');
+            if (selectedOption) {
+                fetch('/api/polls/' + pollId + '/vote', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'selectedOption=' + encodeURIComponent(selectedOption.value),
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Vote successful');
+                        // You can update the UI or perform any other actions here
+                    } else {
+                        console.error('Vote failed');
+                        // Handle errors or display error messages
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    // Handle errors or display error messages
+                });
+            } else {
+                console.error('No option selected');
+                // Handle the case where no option is selected
+            }
+        }
+        function viewResults(pollId) {
+            // Prompt the user for a password
+            const enteredPassword = prompt('Enter the authentication password:');
+
+            // Perform a simple password check
+            if (enteredPassword === '1581') {
+                // Password is correct, proceed to fetch and display results
+                fetch('/api/polls/' + pollId + '/results', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Display the results in a modal dialog
+                    const modalBody = document.getElementById('resultsModalBody');
+                    modalBody.innerHTML = ''; // Clear previous content
+
+                    const resultTitle = document.createElement('h4');
+                    resultTitle.textContent = '';
+                    modalBody.appendChild(resultTitle);
+
+                    const resultList = document.createElement('ul');
+                    data.forEach(result => {
+                        const resultItem = document.createElement('li');
+                        resultItem.textContent = `${result.option}: ${result.voteCount}`;
+                        resultList.appendChild(resultItem);
+                    });
+                    modalBody.appendChild(resultList);
+
+                    // Create a button to disable the "Vote" button
+                    const disableButton = document.createElement('button');
+                    disableButton.className = 'btn btn-danger';
+                    disableButton.textContent = 'Disable Vote Button';
+                    disableButton.onclick = function() {
+                        disableVoteButton(pollId);
+                    };
+                    modalBody.appendChild(disableButton);
+
+                    // Show the results in a Bootstrap modal
+                    $('#resultsModal').modal('show');
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    // Handle errors or display error messages
+                });
+            } else {
+                // Incorrect password, display a message or take appropriate action
+                window.alert('Incorrect password. Access denied.');
+            }
+
+        }
+
+        function disableVoteButton(pollId) {
+            // Disable the "Vote" button
+            const voteButton = document.querySelector('button[onclick="vote(' + pollId + ')"]');
+            if (voteButton) {
+                voteButton.disabled = true;
+                $('#resultsModal').modal('hide'); // Close the modal after disabling the button
+                window.alert('Vote button disabled.');
+            } else {
+                window.alert('Vote button not found.');
+            }
+        }
+
+
+    </script>
+
+<!-- Bootstrap modal structure -->
+<div class="modal fade" id="resultsModal" tabindex="-1" role="dialog" aria-labelledby="resultsModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="resultsModalLabel">Poll Results</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="resultsModalBody">
+                <!-- Results content will be added dynamically here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
